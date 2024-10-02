@@ -37,8 +37,8 @@ def jenis_season(day_df):
     return day_df.groupby(by="season")["count"].sum().reset_index()
 
 # Load datasets
-days_df = pd.read_csv("/dashboard/day_clean.csv")
-hours_df = pd.read_csv("/dashboard/hour_clean.csv")
+days_df = pd.read_csv("dashboard/day_clean.csv")
+hours_df = pd.read_csv("dashboard/hour_clean.csv")
 
 # Konversi kolom datetime ke tipe datetime
 days_df["datetime"] = pd.to_datetime(days_df["datetime"])
@@ -50,7 +50,7 @@ hours_df.sort_values(by="datetime", inplace=True)
 
 # Sidebar untuk pemilihan tanggal
 with st.sidebar:
-    st.image("/dashboard/Foto BG merah.jpeg")
+    st.image("dashboard/Foto BG merah.jpeg")
     
     start_date, end_date = st.date_input(
         label='Rentang Waktu',
